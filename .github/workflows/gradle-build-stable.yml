@@ -33,4 +33,7 @@ jobs:
         run: chmod +x ./gradlew
       - name: Run build with Gradle wrapper
         id: gradle
-        run: ./gradlew build --scan
+        run: ./gradlew build -x test --scan
+      - name: Run gradle tests
+        id: gradle
+        run: ./gradlew test
