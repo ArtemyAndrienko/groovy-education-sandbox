@@ -12,6 +12,9 @@ repositories {
     mavenCentral()
 }
 
+apply from: 'tasks.gradle'
+
+
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
@@ -23,17 +26,30 @@ dependencies {
     implementation 'org.codehaus.groovy:groovy-all:3.0.11'
 
     // This dependency is used by the application.
-    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'com.google.guava:guava:32.1.1-jre'
 
     // Use the awesome Spock testing and specification framework even with Java
-    testImplementation 'org.spockframework:spock-core:2.2-groovy-3.0'
-
+//    testImplementation 'org.spockframework:spock-core:2.2-groovy-3.0'
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
+
+mainClassName = "im.educ.groovy.App"
+
 application {
     // Define the main class for the application.
-    mainClass = 'im.educ.groovy'
+    mainClass = 'im.educ.groovy.App'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': "${mainClassName}"
+//        attributes 'Class-Path' : configurations.getByName('compile').collect { 'lib/' + it.getName() }.join(' ')
+    }
+}
+
+artifacts {
+    archives fatJar
 }
 
 
