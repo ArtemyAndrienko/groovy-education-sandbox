@@ -6,3 +6,5 @@ plugins {
 
 rootProject.name = 'groovy-education-sandbox'
 include 'hw02-gradle'
+include 'hw04-json-gradle'
+
