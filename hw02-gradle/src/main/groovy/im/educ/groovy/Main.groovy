@@ -34,20 +34,17 @@ static void main(String[] args) {
     atm1 = new ATM(bs, hw, DispencingMachine.mod5.getMap(), Currency.RUB, [0, 0, 0, 0, 0])
 
     println atm1
-    atm1.deposit("12345678", "1234", [5, 4, 3, 2, 10])
+    atm1.deposit("12345678", "1234", Currency.EUR, [5, 4, 3, 2, 10])
     println atm1.usedSlots
-    atm1.withdraw("12345678", "1234", 3850)
+    atm1.withdraw("12345678", "1234", Currency.RUB, 3850)
     println atm1.usedSlots
-    atm1.withdraw("12345678", "1234", 12500)
+    atm1.withdraw("12345678", "1234", Currency.RUB, 12500)
     println atm1.usedSlots
-    atm1.withdraw("12345678", "1234", 9500)
+    atm1.withdraw("12345678", "1234", Currency.RUB, 9500)
     println atm1.usedSlots
-    atm1.withdraw("12345678", "2222", 6900)
+    atm1.withdraw("12345678", "1234", Currency.RUB, 6900)
     println atm1.usedSlots
-
-    atm1.deposit("12345678", "1234", [1, 1, 1, 1, 1])
-    println atm1.usedSlots
-    atm1.withdraw("12345678", "2222", [1, 1, 1, 1, 1])
+    atm1.withdraw("12345678", "1234", Currency.RUB, [0, 0, 0, 0, 10])
     println atm1.usedSlots
 
     println alex

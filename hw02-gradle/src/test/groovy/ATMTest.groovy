@@ -62,6 +62,7 @@ class ATMTest {
         Hardware hw = new Hardware()
         ATM atm1
         atm1 = new ATM(bs, hw, DispencingMachine.mod5.getMap(), Currency.RUB, [0, 0, 0, 0, 0])
+        println atm1
 
         String text
         text = tapSystemOut(() -> {
@@ -73,7 +74,6 @@ class ATMTest {
         })
         assertEquals("===Неверный ПИН!!! Операция отклонена===", text.trim())
 
-        println atm1
         atm1.deposit("12345678", "1234", Currency.EUR, [5, 4, 3, 2, 10])
         println atm1.usedSlots
         atm1.withdraw("12345678", "1234", Currency.RUB, 3850)
