@@ -32,19 +32,19 @@ class BankAccount {
 
     // Getters
     String getAccountNumber() {
-        return accountNumber
+        return this.accountNumber
     }
 
     double getBalance() {
-        return balance
+        return this.balance
     }
 
     String getCustomerName() {
-        return customerName
+        return this.customerName
     }
 
     String getPin() {
-        return pin
+        return this.pin
     }
 
 

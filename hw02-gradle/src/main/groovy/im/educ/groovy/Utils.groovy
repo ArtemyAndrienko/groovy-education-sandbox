@@ -10,5 +10,12 @@ class Utils {
         ArrayList.metaClass.minus << { Collection b ->
             [delegate, b].transpose().collect { x, y -> x - y }
         }
+
+
+         ArrayList.metaClass.shiftLeft << { Collection b ->
+             [delegate, b].transpose().collect { x, y -> x + y }
+         }
     }
+
+
 }
