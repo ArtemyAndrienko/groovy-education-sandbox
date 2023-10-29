@@ -1,6 +1,7 @@
 plugins {
     id 'groovy'
     id 'jacoco'
+    id 'com.google.cloud.tools.jib' version "3.4.0"
 }
 
 group = 'im.educ.groovy'
@@ -42,6 +43,17 @@ jacocoTestReport {
     }
 }
 
-test {
-    useJUnitPlatform()
+
+jib {
+    from {
+        image = "gcr.io/distroless/java:11"
+    }
+    to {
+        image = "artemyandrienko/${rootProject.name}_hw02-gradle"
+        tags = ["${project.version}"]
+    }
+    container {
+        creationTime = Instant.now().toString()
+        workingDirectory = '/hw02-gradle/src/main/groovy'
+    }
 }
