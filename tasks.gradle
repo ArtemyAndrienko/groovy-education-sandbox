@@ -1,0 +1,22 @@
+task fatJar(type: Jar) {
+    manifest.from jar.manifest
+    archiveClassifier = "fatjar"
+    archiveBaseName = "${rootProject.name}"
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    from {
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
+
+
+task hello {
+    println 'hello from other script'
+}
+
+task runScript (dependsOn: 'classes', type: JavaExec) {
+    main = 'HelloOtus'
+    classpath = sourceSets.main.runtimeClasspath
+}
