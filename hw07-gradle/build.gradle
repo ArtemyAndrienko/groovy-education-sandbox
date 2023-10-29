@@ -1,0 +1,47 @@
+plugins {
+    id 'groovy'
+    id 'org.barfuin.gradle.taskinfo' version '2.1.0'
+    id 'ru.otus.gradle.codegen'
+}
+
+group = 'im.educ.groovy'
+version = '0.0.1-SNAPSHOT'
+
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/groovy']
+            srcDirs += 'src/main/java'
+            sourceSets.main.java.srcDirs += 'src/codegen/java'
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
+
+dependencies {
+    implementation 'org.apache.groovy:groovy:4.0.14'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+
+codegen {
+    className = "SimpleApplication"
+    packageName = 'ru.otus.groovy.task07'
+    sourceDir = "${projectDir}/src/codegen/java"
+    fieldName = "field1"
+    fields = "[firstName:String,lastName:String,age:Integer,adress:String]"
+}
+

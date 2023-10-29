@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/hw02-gradle" />
             <option value="$PROJECT_DIR$/hw04-json-gradle" />
+            <option value="$PROJECT_DIR$/hw07-gradle" />
             <option value="$PROJECT_DIR$/hw08-dsl-gradle" />
           </set>
         </option>
