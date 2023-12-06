@@ -1,0 +1,31 @@
+micronaut:
+  application:
+    name: todo-micronaut
+
+#    path: /control-panel
+#  router:
+#    static-resources:
+#      default:
+#        paths:
+#          - classpath:public
+
+#datasources:
+#  default:
+#    url: jdbc:postgresql://192.168.125.181:5432/tododb
+#    driverClassName: org.postgresql.Driver
+#    username: todo
+#    password: todo
+#    schema-generate: none
+
+#flyway:
+#  datasources:
+#    default:
+#      enabled: true
+
+endpoints:
+  all:
+    enabled: false
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: never

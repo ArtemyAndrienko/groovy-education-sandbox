@@ -1,0 +1,73 @@
+plugins {
+    id 'groovy'
+//    id("com.github.johnrengelman.shadow") version "7.1.2"
+    //id("io.micronaut.application") version "3.3.2" //or
+    id 'io.micronaut.minimal.application' version '3.3.2'
+    id 'io.micronaut.docker' version '3.3.2'
+    id 'io.micronaut.graalvm' version '3.3.2'
+
+}
+
+version = "0.1.1"
+group = "im.educ.groovy.todo"
+
+repositories {
+    mavenCentral()
+}
+
+//java {
+//    toolchain {
+//        languageVersion = JavaLanguageVersion.of(17)
+//    }
+//}
+sourceCompatibility = 17
+targetCompatibility = 17
+
+
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("im.educ.groovy.todo.*")
+    }
+}
+
+dependencies {
+    annotationProcessor("io.micronaut.data:micronaut-data-processor")
+    implementation("io.micronaut.groovy:micronaut-runtime-groovy")
+//    implementation("io.micronaut:micronaut-runtime")
+    implementation("io.micronaut:micronaut-validation")
+    implementation("io.micronaut:micronaut-management")
+//    implementation("io.micronaut:micronaut-http-client")
+
+    implementation("io.micronaut.flyway:micronaut-flyway")
+    implementation("io.micronaut.data:micronaut-data-jdbc")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("javax.annotation:javax.annotation-api")
+
+    runtimeOnly("ch.qos.logback:logback-classic")
+    runtimeOnly("org.postgresql:postgresql")
+
+    testImplementation("org.assertj:assertj-core:3.20.2")
+//    testImplementation("spock:3.20.2")
+    testImplementation("junit:junit-dep:4.8")
+}
+
+
+application {
+    mainClass.set("im.educ.groovy.todo.Application")
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty "micronaut.env.deduction", false
+    testLogging {
+        events "FAILED", "SKIPPED", "PASSED"
+    }
+}
+
+
+//dockerBuild {
+//    images = ["hub.docker.com/artemyandrienko/todo-micronaut:$project.version"]
+//}

@@ -1,0 +1,23 @@
+applicationType: default
+defaultPackage: com.github.avenderov.todo
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [
+  annotation-api,
+  app-name,
+  flyway,
+  gradle,
+  http-client,
+  java,
+  java-application,
+  jdbc-hikari,
+  junit,
+  logback,
+  netty-server,
+  postgres,
+  readme,
+  shade,
+  testcontainers,
+  yaml
+]

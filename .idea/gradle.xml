@@ -6,6 +6,7 @@
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-8.2.1" />
+        <option name="gradleJvm" value="temurin-17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -15,6 +16,7 @@
             <option value="$PROJECT_DIR$/hw04-json-gradle" />
             <option value="$PROJECT_DIR$/hw07-gradle" />
             <option value="$PROJECT_DIR$/hw08-dsl-gradle" />
+            <option value="$PROJECT_DIR$/todo-list" />
           </set>
         </option>
       </GradleProjectSettings>
