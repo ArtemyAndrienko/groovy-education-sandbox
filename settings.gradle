@@ -10,4 +10,6 @@ include 'hw03-gradle'
 include 'hw04-json-gradle'
 include 'hw08-dsl-gradle'
 include 'hw07-gradle'
+include 'hw05-orm-gradle'
+include 'hw08-example-gradle'
 
