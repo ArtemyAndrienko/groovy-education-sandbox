@@ -13,8 +13,10 @@
             <option value="$PROJECT_DIR$/hw02-gradle" />
             <option value="$PROJECT_DIR$/hw03-gradle" />
             <option value="$PROJECT_DIR$/hw04-json-gradle" />
+            <option value="$PROJECT_DIR$/hw05-orm-gradle" />
             <option value="$PROJECT_DIR$/hw07-gradle" />
             <option value="$PROJECT_DIR$/hw08-dsl-gradle" />
+            <option value="$PROJECT_DIR$/hw08-example-gradle" />
           </set>
         </option>
       </GradleProjectSettings>
